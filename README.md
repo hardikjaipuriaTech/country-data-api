@@ -15,18 +15,18 @@ _The server will be running at http://localhost:3000._
 
 ## Service API Testing
 
-**1. Get Auth Token**
-_Command:_
+**1. Get Auth Token** <br/>
+_Command:_ <br/>
 curl -X POST -H "Content-Type: application/json" -d "{\"username\": \"admin\", \"password\": \"admin@1234\"}" http://localhost:3000/api/auth
-_Sample Output 1:_
+_Sample Output 1:_ <br/>
 After running this command , you will receive the generated token in json response as shown below
-   {"authToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4"}
+   {"authToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4"} <br/>
 
 
-**2. Fetch Detailed Information about a Country**
-Copy the token from the Output 1 and use it in the command below
-_Command:_
-curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4" http://localhost:3000/api/countryInfo/India
+**2. Fetch Detailed Information about a Country** <br/>
+Copy the token from the Output 1 and use it in the command below <br/> <br/>
+_Command:_ <br/>
+curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4" http://localhost:3000/api/countryInfo/India <br/>
 
 **3. Retrieve list of Countries Name based on specified filters of population, area and language.
 Also provide sorting as 'asc' or 'desc' for sorting on names as ascending and descending respetively
