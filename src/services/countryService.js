@@ -21,12 +21,12 @@ async function getCountryInfo(countryName) {
 /**
  * Retrieves a filtered and paginated list of countries based on specified criteria.
  *
- * @param {number} requestedPopulation - The population filter for countries.
- * @param {number} requestedArea - The area filter for countries.
+ * @param {string} requestedPopulation - The population filter for countries.
+ * @param {string} requestedArea - The area filter for countries.
  * @param {string} requestedLanguage - The language filter for countries.
  * @param {string} requestedSorting - The sorting order ('asc' or 'desc') for the country list.
- * @param {number} requestedPage - The requested page number for pagination.
- * @param {number} requestedPageSize - The requested page size for pagination.
+ * @param {string} requestedPage - The requested page number for pagination.
+ * @param {string} requestedPageSize - The requested page size for pagination.
  * @returns {Promise<Array<string>>} List of names of Country that meet the specified criteria.
  * @throws {Error} Throws an error if there is an issue fetching the country list.
  */
@@ -43,7 +43,7 @@ async function getCountryList(requestedPopulation, requestedArea, requestedLangu
         // Applying population filter
         if (requestedPopulation != undefined && requestedPopulation) {
             countries = countries.filter(country => {
-                const matchesPopulation = country.population ? country.population == requestedPopulation : true;
+                const matchesPopulation = country.population && country.population !==0 ? country.population == requestedPopulation : true;
                 return matchesPopulation;
             });
         }
