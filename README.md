@@ -3,15 +3,18 @@ A backend API service that returns useful data about countries
 
 ## Setup
 
-1. **Clone the repository:**
-   git clone https://github.com/hardikjaipuriaTech/country-data-api.git
+1. **Clone the repository:** <br/>
+_Command_ <br/>
+   git clone https://github.com/hardikjaipuriaTech/country-data-api.git <br/>
 
-2. **Navigate to the project directory**
-   cd country-data-api
+2. **Navigate to the project directory** <br/>
+_Command_ <br/>
+   cd country-data-api <br/>
 
-3. **Run the Server**
-   npm start
-_The server will be running at http://localhost:3000._
+3. **Run the Server** <br/>
+_Command_ <br/>
+   npm start <br/>
+_The server will be running at http://localhost:3000._ <br/>
 
 ## Service API Testing
 
