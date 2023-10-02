@@ -7,7 +7,7 @@ A backend API service that returns useful data about countries
    git clone https://github.com/hardikjaipuriaTech/country-data-api.git
 
 2. **Navigate to the project directory**
-   cd country-information-api
+   cd country-data-api
 
 3. **Run the Server**
    npm start
@@ -34,26 +34,26 @@ Provide page and pagesize paramters for pagination** <br/>
 
 Copy the token from Output 1 and use it in the commands below <br/>
 
-a. For Population based filtering <br/>
+**a.  Population based filtering** <br/>
 curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4" http://localhost:3000/api/countriesName/list?population=280904 <br/>
 
-b. For Area based filtering <br/>
+**b. Area based filtering** <br/>
 curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4" http://localhost:3000/api/countriesName/list?area=916445 <br/>
 
-c. For Language based filtering <br/>
+**c. Language based filtering** <br/>
 curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4" http://localhost:3000/api/countriesName/list?language=french <br/>
 
-d. All filters or combination working together
-curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4" http://localhost:3000/api/countriesName/list?population=280904&area=916445.0&language=spanish
+**d. All filters or combination working together** <br/>
+curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4" http://localhost:3000/api/countriesName/list?population=280904&area=916445.0&language=spanish <br/>
 
-e. Filters with sorting
-curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4" http://localhost:3000/api/countriesName/list?language=french&sording=desc
+**e. Filters with sorting** <br/>
+curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4" http://localhost:3000/api/countriesName/list?language=french&sording=desc <br/>
 
-f. Filters with pagination
-curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4" http://localhost:3000/api/countriesName/list?language=english&page=1&pagesize=5
+**f. Filters with pagination** <br/>
+curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4" http://localhost:3000/api/countriesName/list?language=english&page=1&pagesize=5 <br/>
 
-g. Sorting and Pagination without filters
-curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4" http://localhost:3000/api/countriesName/list?sorting=asc&page=1&pagesize=5
+**g. Sorting and Pagination without filters** <br/>
+curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4" http://localhost:3000/api/countriesName/list?sorting=asc&page=1&pagesize=5 <br/>
 
 Replace population,area, language, sorting, and page with your desired parameters and use different combinations as per requirement.
 
