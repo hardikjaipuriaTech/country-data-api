@@ -9,28 +9,33 @@ A backend API service that returns useful data about countries
 2. **Navigate to the project directory**
    cd country-information-api
 
-3. **Install dependencies:**
-   npm install
-
-4. **Run the Server**
-   node src/app.js
+3. **Run the Server**
+   npm start
 _The server will be running at http://localhost:3000._
 
 ## Service API Testing
 
 1. Get Auth Token
+_Command:_
 curl -X POST -H "Content-Type: application/json" -d "{\"username\": \"admin\", \"password\": \"admin@1234\"}" http://localhost:3000/api/auth
+_Sample Output 1:_
 After running this command , you will receive the generated token in json response as shown below
-{"authToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MDE1MzU2LCJleHAiOjE2OTYxMDE3NTZ9.44dqvobAengxkBKttYH5EmS58Mrj1KWq8EVBUnL57U8"}
+   {"authToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4"}
 
 
 2. Fetch Detailed Information about a Country
-curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MDE1MzU2LCJleHAiOjE2OTYxMDE3NTZ9.44dqvobAengxkBKttYH5EmS58Mrj1KWq8EVBUnL57U8" http://localhost:3000/api/countries/India
+Copy the token from the Output 1 and use it in the command below
+_Command:_
+curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4" http://localhost:3000/api/countryInfo/India
 
-3. Retrieve list of Countries
-curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MDE1MzU2LCJleHAiOjE2OTYxMDE3NTZ9.44dqvobAengxkBKttYH5EmS58Mrj1KWq8EVBUnL57U8" "http://localhost:3000/api/countries/list?filters=population&sorting=asc&page=1"
+3. Retrieve list of Countries Name based on specified filters of population, language and area.
+Also provide sorting as 'asc' or 'desc' for sorting on names as ascending and descnding respetively
+Provide page and pagesize paramters for pagination
 
-Replace filters, sorting, and page with your desired parameters.
+Copy the token from Output 1 and use it in the command below
+curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjk2MjU1MjQ5LCJleHAiOjE2OTYzNDE2NDl9.MlQw3uqDfZl_2HjILJARU7eV1NifDVggLa-OtyPbtZ4" http://localhost:3000/api/countriesName/list?sorting=asc&page=1
+
+Replace population,area, language, sorting, and page with your desired parameters.
 
 
 
